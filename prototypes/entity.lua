@@ -11,7 +11,7 @@ local function deepCopy(original)
 end
 
 roboportmk2 = deepCopy(data.raw.roboport["roboport"])
-roboportmk2.icon = "__roboport-mk2__/graphics/icons/roboport-mk2.png"
+roboportmk2.icon = "__roboport-mk2__/graphics/icons/hr-roboport-mk2-base.png"
 roboportmk2.name = "roboport-mk2"
 roboportmk2.fast_replaceable_group = "roboport"
 roboportmk2.next_upgrade = "roboport-mk3"
