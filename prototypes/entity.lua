@@ -11,7 +11,7 @@ local function deepCopy(original)
 end
 
 roboportmk2 = deepCopy(data.raw.roboport["roboport"])
-roboportmk2.icon = "__roboport-mk2__/graphics/icons/hr-roboport-mk2-base.png"
+roboportmk2.icon = "__roboport-mk2__/graphics/icons/roboport-mk2-base.png"
 roboportmk2.name = "roboport-mk2"
 roboportmk2.fast_replaceable_group = "roboport"
 roboportmk2.next_upgrade = "roboport-mk3"
@@ -39,26 +39,9 @@ roboportmk2.charging_offsets = {
 {-1.5,-1.5},{-1.0,-1.5},{-0.5,-1.5},{0.0,-1.5},{0.5,-1.5},{1.0,-1.5},{1.5,-1.5}
 }
 
-base =
-    {
-      layers =
-      {
-        {
-          filename = "__base__/graphics/entity/roboport/roboport-mk2-base.png",
-          width = 143,
-          height = 135,
-          shift = {0.5, 0.25},
-          hr_version =
-          {
-            filename = "__base__/graphics/entity/roboport/hr-roboport-mk2-base.png",
-            width = 228,
-            height = 277,
-            shift = util.by_pixel(2, 7.75),
-            scale = 0.5
-          }
-        }
 
 roboportmk3 = deepCopy(data.raw.roboport["roboport"])
+roboportmk3.icon = "hr-roboport-mk3-base.png"
 roboportmk3.name = "roboport-mk3"
 roboportmk3.fast_replaceable_group = "roboport"
 roboportmk3.logistics_radius = settings.startup["mk3-logistic-radius"].value
