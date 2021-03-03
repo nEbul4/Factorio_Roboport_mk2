@@ -2,7 +2,7 @@ data:extend({
   {
     type = "item",
     name = "roboport-mk2",
-    icon = "__base__/graphics/icons/roboport.png",
+    icon = "__Factorio_Roboport_mk2__/graphics/icons/roboport-mk2.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "logistic-network",
     order = "c[signal]-a[roboport]",
@@ -12,7 +12,7 @@ data:extend({
   {
     type = "item",
     name = "roboport-mk3",
-    icon = "__base__/graphics/icons/roboport.png",
+    icon = "__Factorio_Roboport_mk2__/graphics/icons/roboport-mk3.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "logistic-network",
     order = "c[signal]-a[roboport]",

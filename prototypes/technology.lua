@@ -2,7 +2,7 @@ data:extend({
   {
     type = "technology",
     name = "roboport-mk2",
-    icon_size = 128,
+    icon_size = 256, icon_minimaps = 4,
     icon = "__base__/graphics/technology/construction-robotics.png",
     effects =
     {
@@ -29,7 +29,7 @@ data:extend({
   {
     type = "technology",
     name = "roboport-mk3",
-    icon_size = 128,
+    icon_size = 256, icon_minimaps = 4,
     icon = "__base__/graphics/technology/construction-robotics.png",
     effects =
     {
