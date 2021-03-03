@@ -11,7 +11,7 @@ local function deepCopy(original)
 end
 
 roboportmk2 = deepCopy(data.raw.roboport["roboport"])
-roboportmk2.icon = "_roboport-mk2/graphics/icons/roboport-mk2.png""
+roboportmk2.icon = "__roboport-mk2__/graphics/icons/roboport-mk2.png"
 roboportmk2.name = "roboport-mk2"
 roboportmk2.fast_replaceable_group = "roboport"
 roboportmk2.next_upgrade = "roboport-mk3"
@@ -56,115 +56,7 @@ base =
             shift = util.by_pixel(2, 7.75),
             scale = 0.5
           }
-        },
-        {
-          filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
-          width = 147,
-          height = 101,
-          draw_as_shadow = true,
-          shift = util.by_pixel(28.5, 19.25),
-          hr_version =
-          {
-            filename = "__base__/graphics/entity/roboport/hr-roboport-shadow.png",
-            width = 294,
-            height = 201,
-            draw_as_shadow = true,
-            force_hr_shadow = true,
-            shift = util.by_pixel(28.5, 19.25),
-            scale = 0.5
-          }
         }
-      }
-    },
-    base_patch =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-base-patch.png",
-      priority = "medium",
-      width = 69,
-      height = 50,
-      frame_count = 1,
-      shift = {0.03125, 0.203125},
-      hr_version =
-      {
-        filename = "__base__/graphics/entity/roboport/hr-roboport-base-patch.png",
-        priority = "medium",
-        width = 138,
-        height = 100,
-        frame_count = 1,
-        shift = util.by_pixel(1.5, 5),
-        scale = 0.5
-      }
-    },
-    base_animation =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-base-animation.png",
-      priority = "medium",
-      width = 42,
-      height = 31,
-      frame_count = 8,
-      animation_speed = 0.5,
-      shift = {-0.5315, -1.9375},
-      hr_version =
-      {
-        filename = "__base__/graphics/entity/roboport/hr-roboport-base-animation.png",
-        priority = "medium",
-        width = 83,
-        height = 59,
-        frame_count = 8,
-        animation_speed = 0.5,
-        shift = util.by_pixel(-17.75, -61.25),
-        scale = 0.5
-      }
-    },
-    door_animation_up =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-door-up.png",
-      priority = "medium",
-      width = 52,
-      height = 20,
-      frame_count = 16,
-      shift = {0.015625, -0.890625},
-      hr_version =
-      {
-        filename = "__base__/graphics/entity/roboport/hr-roboport-door-up.png",
-        priority = "medium",
-        width = 97,
-        height = 38,
-        frame_count = 16,
-        shift = util.by_pixel(-0.25, -29.5),
-        scale = 0.5
-      }
-    },
-    door_animation_down =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-door-down.png",
-      priority = "medium",
-      width = 52,
-      height = 22,
-      frame_count = 16,
-      shift = {0.015625, -0.234375},
-      hr_version =
-      {
-        filename = "__base__/graphics/entity/roboport/hr-roboport-door-down.png",
-        priority = "medium",
-        width = 97,
-        height = 41,
-        frame_count = 16,
-        shift = util.by_pixel(-0.25,-9.75),
-        scale = 0.5
-      }
-    },
-    recharging_animation =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-recharging.png",
-      draw_as_glow = true,
-      priority = "high",
-      width = 37,
-      height = 35,
-      frame_count = 16,
-      scale = 1.5,
-      animation_speed = 0.5,
-    },
 
 roboportmk3 = deepCopy(data.raw.roboport["roboport"])
 roboportmk3.name = "roboport-mk3"
