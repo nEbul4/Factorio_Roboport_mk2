@@ -1,9 +1,9 @@
 {
   "name": "Factorio_Roboport_mk2",
-  "version": "1.0",
+  "version": "1.1.0",
   "title": "More Roboports",
   "author": "b4Bu, original by 'SilentSean'",
   "description": "Adds 2 more roboports with increased charging slots, robot slots and range. ",
-  "factorio_version": "1.1.0",
-  "dependencies": ["base >= 1.0"]
+  "factorio_version": "1.1",
+  "dependencies": ["base >= 1.0.0"]
 }
