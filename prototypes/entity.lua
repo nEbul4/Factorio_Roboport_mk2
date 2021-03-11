@@ -16,7 +16,7 @@ roboportmk2.fast_replaceable_group = "roboport"
 roboportmk2.next_upgrade = "roboport-mk3"
 roboportmk2.logistics_radius = settings.startup["mk2-logistic-radius"].value
 roboportmk2.construction_radius = settings.startup["mk2-construction-radius"].value
-roboportmk2.minable = {mining_time = 0.5, result = "roboport-mk2"}
+roboportmk2.minable = {mining_time = 0.1, result = "roboport-mk2"}
 roboportmk2.energy_source = {
     type = "electric",
     usage_priority = "secondary-input",
@@ -29,13 +29,11 @@ roboportmk2.charging_energy = "1MW"
 roboportmk2.robot_slots_count = 16
 roboportmk2.material_slots_count = 10
 roboportmk2.charging_offsets = {
-{-1.5,1.5},{-1.0,1.5},{-0.5,1.5},{0.0,1.5},{0.5,1.5},{1.0,1.5},{1.5,1.5},
-{-1.5,1.0},										   			                         {1.5,1.0},
-{-1.5,0.5},										   			                         {1.5,0.5},
-{-1.5,-0.5},									   			                         {1.5,0.0},
-{-1.5,-1.0},									   			                         {1.5,-0.5},
-{-1.5,-1.5},									   			                         {1.5,-1.5},
-{-1.5,-1.5},{-1.0,-1.5},{-0.5,-1.5},{0.0,-1.5},{0.5,-1.5},{1.0,-1.5},{1.5,-1.5}
+{-1.5,1.5}, {-0.5,1.5}, {0,1.5}, {0.5,1.5}, {1.5,1.5},
+{-1.5,0.5},                                 {1.5,0.5},
+{-1.5,0},                                   {1.5,0},
+{-1.5,-1.0},                                {1.5,-0.5},
+{-1.5,-1.5},{-0.5,-1.5},{0,-1.5},{0.5,-1.5},{1.5,-1.5}
 }
 roboportmk2.base.layers =
   {
@@ -80,7 +78,7 @@ roboportmk3.minable = {mining_time = 1, result = "roboport-mk3"}
 roboportmk3.energy_source = {
   type = "electric",
   usage_priority = "secondary-input",
-  input_flow_limit = "64MW",
+  input_flow_limit = "48MW",
   buffer_capacity = "1200MJ"
 }
 roboportmk3.recharge_minimum = "480MJ"
