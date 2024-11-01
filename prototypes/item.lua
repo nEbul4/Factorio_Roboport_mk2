@@ -20,3 +20,4 @@ data:extend({
     stack_size = 10,
   }
 })
+

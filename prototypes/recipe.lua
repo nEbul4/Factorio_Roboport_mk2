@@ -7,11 +7,11 @@ data:extend(
       energy_required = 10,
       ingredients =
       {
-        {"steel-plate", 10},
-        {"roboport", 2},
-        {"processing-unit", 5}
+        {type="item", name="steel-plate", amount=10},
+        {type="item", name="roboport", amount=2},
+        {type="item", name="processing-unit", amount=5}
       },
-      result = "roboport-mk2"
+      results = {{type="item", name="roboport-mk2", amount=1}}
     },
     {
       type = "recipe",
@@ -20,10 +20,11 @@ data:extend(
       energy_required = 20,
       ingredients =
       {
-        {"steel-plate", 25},
-        {"roboport-mk2", 2},
-        {"processing-unit", 15}
+        {type="item", name="steel-plate", amount=25},
+        {type="item", name="roboport-mk2", amount=2},
+        {type="item", name="processing-unit", amount=15}
       },
-      result = "roboport-mk3"},
+      results = {{type="item", name="roboport-mk3", amount=1}}
   }
+}
 )
