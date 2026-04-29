@@ -1,7 +1,6 @@
 This is a rework of the original mod by SilentSean (https://mods.factorio.com/user/SilentSean) by b4Bu aka nEbul4.
 
 At the moment he seems to have abandonned the project, so I "ported" it to V1.1.X.
-
 Anakin86708 helped with some of the changes for 2.0.0, thanks!
 
 I used most of his codebase, but changed all the costs, recipes and capabilities of the roboports. They are more expensive, and have more charging ports. 

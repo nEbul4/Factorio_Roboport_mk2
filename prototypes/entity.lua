@@ -10,28 +10,38 @@ local function deepCopy(original)
   return copy
 end
 
-roboportmk2 = deepCopy(data.raw.roboport["roboport"])
-roboportmk2.name = "roboport-mk2"
-roboportmk2.fast_replaceable_group = "roboport"
-roboportmk2.icon = "__Factorio_Roboport_mk2__/graphics/icons/roboport-mk2.png"
-roboportmk2.dying_explosion = "roboport-explosion"
-roboportmk2.corpse = "roboport-remnant-mk2"
-roboportmk2.next_upgrade = "roboport-mk3"
-roboportmk2.logistics_radius = settings.startup["mk2-logistic-radius"].value
-roboportmk2.construction_radius = settings.startup["mk2-construction-radius"].value
-roboportmk2.minable = {mining_time = 0.1, result = "roboport-mk2"}
-roboportmk2.energy_source = {
-  type = "electric",
-  usage_priority = "secondary-input",
-  input_flow_limit = "16MW",
-  buffer_capacity = "600MJ"
-}
-roboportmk2.recharge_minimum = "240MJ"
-roboportmk2.energy_usage = "300kW"
-roboportmk2.charging_energy = "1MW"
-roboportmk2.robot_slots_count = 16
-roboportmk2.material_slots_count = 10
-roboportmk2.charging_offsets = {
+if (mods["space-age"]) then -- If Spaceage is enabled, this part is loaded, with freezing and heating
+	roboportmk2 = deepCopy(data.raw.roboport["roboport"])
+	roboportmk2.name = "roboport-mk2"
+	roboportmk2.fast_replaceable_group = "roboport"
+	roboportmk2.icon = "__Factorio_Roboport_mk2__/graphics/icons/roboport-mk2.png"
+	roboportmk2.dying_explosion = "roboport-explosion"
+	roboportmk2.corpse = "roboport-remnant-mk2"
+	roboportmk2.next_upgrade = "roboport-mk3"
+	roboportmk2.logistics_radius = settings.startup["mk2-logistic-radius"].value
+	roboportmk2.construction_radius = settings.startup["mk2-construction-radius"].value
+	roboportmk2.minable = {mining_time = 0.1, result = "roboport-mk2"}
+	roboportmk2.energy_source = {
+	  type = "electric",
+	  usage_priority = "secondary-input",
+	  input_flow_limit = "16MW",
+	  buffer_capacity = "600MJ"
+	}
+	roboportmk2.recharge_minimum = "240MJ"
+	roboportmk2.energy_usage = "300kW"
+	roboportmk2.charging_energy = "1MW"
+	roboportmk2.robot_slots_count = 16
+	roboportmk2.heating_energy = "400kW"
+	roboportmk2.frozen_patch =
+	{
+	  filename = "__space-age__/graphics/entity/frozen/roboport/roboport-base.png",
+	  width = 228,
+	  height = 277,
+	  shift = util.by_pixel(2, -2.25),
+	  scale = 0.5
+	}
+	roboportmk2.material_slots_count = 10
+	roboportmk2.charging_offsets = {
   {-1.5, 1.5},
   {-0.5, 1.5},
   {0, 1.5},
@@ -48,94 +58,230 @@ roboportmk2.charging_offsets = {
   {0, -1.5},
   {0.5, -1.5},
   {1.5, -1.5}
-}
-roboportmk2.base = {
-  layers = {
-    {
-      filename = "__Factorio_Roboport_mk2__/graphics/entity/roboport/roboport-mk2-base.png",
-      width = 228,
-      height = 277,
-      shift = util.by_pixel(2, 7.75),
-      scale = 0.5
-    },
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
-      width = 294,
-      height = 201,
-      draw_as_shadow = true,
-      force_hr_shadow = true,
-      shift = util.by_pixel(28.5, 19.25),
-      scale = 0.5
+  }
+  roboportmk2.base = {
+    layers = {
+      {
+        filename = "__Factorio_Roboport_mk2__/graphics/entity/roboport/roboport-mk2-base.png",
+        width = 228,
+        height = 277,
+        shift = util.by_pixel(2, 7.75),
+        scale = 0.5
+      },
+      {
+        filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
+        width = 294,
+        height = 201,
+        draw_as_shadow = true,
+        force_hr_shadow = true,
+        shift = util.by_pixel(28.5, 19.25),
+        scale = 0.5
+      }
     }
   }
-}
 
 
-roboportmk3 = deepCopy(data.raw.roboport["roboport"])
-roboportmk3.name = "roboport-mk3"
-roboportmk3.fast_replaceable_group = "roboport"
-roboportmk3.corpse = "roboport-remnant-mk3"
-roboportmk3.logistics_radius = settings.startup["mk3-logistic-radius"].value
-roboportmk3.construction_radius = settings.startup["mk3-construction-radius"].value
-roboportmk3.minable = {mining_time = 1, result = "roboport-mk3"}
-roboportmk3.energy_source = {
-  type = "electric",
-  usage_priority = "secondary-input",
-  input_flow_limit = "48MW",
-  buffer_capacity = "1200MJ"
-}
-roboportmk3.recharge_minimum = "480MJ"
-roboportmk3.energy_usage = "600kW"
-roboportmk3.charging_energy = "2MW"
-roboportmk3.robot_slots_count = 24
-roboportmk3.material_slots_count = 10
-roboportmk3.charging_offsets = {
-  {-1.5, 1.5},
-  {-1.0, 1.5},
-  {-0.5, 1.5},
-  {0.0, 1.5},
-  {0.5, 1.5},
-  {1.0, 1.5},
-  {1.5, 1.5},
-  {-1.5, 1.0},
-  {1.5, 1.0},
-  {-1.5, 0.5},
-  {1.5, 0.5},
-  {-1.5, -0.5},
-  {1.5, 0.0},
-  {-1.5, -1.0},
-  {1.5, -0.5},
-  {-1.5, -1.5},
-  {1.5, -1.5},
-  {-1.5, -1.5},
-  {-1.0, -1.5},
-  {-0.5, -1.5},
-  {0.0, -1.5},
-  {0.5, -1.5},
-  {1.0, -1.5},
-  {1.5, -1.5}
-}
-roboportmk3.base = {
-  layers = {
-    {
-      filename = "__Factorio_Roboport_mk2__/graphics/entity/roboport/roboport-mk3-base.png",
-      width = 228,
-      height = 277,
-      shift = util.by_pixel(2, 7.75),
-      scale = 0.5
-    },
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
-      width = 294,
-      height = 201,
-      draw_as_shadow = true,
-      force_hr_shadow = true,
-      shift = util.by_pixel(28.5, 19.25),
-      scale = 0.5
+  roboportmk3 = deepCopy(data.raw.roboport["roboport"])
+  roboportmk3.name = "roboport-mk3"
+  roboportmk3.fast_replaceable_group = "roboport"
+  roboportmk3.corpse = "roboport-remnant-mk3"
+  roboportmk3.logistics_radius = settings.startup["mk3-logistic-radius"].value
+  roboportmk3.construction_radius = settings.startup["mk3-construction-radius"].value
+  roboportmk3.minable = {mining_time = 1, result = "roboport-mk3"}
+  roboportmk3.energy_source = {
+    type = "electric",
+    usage_priority = "secondary-input",
+    input_flow_limit = "48MW",
+    buffer_capacity = "1200MJ"
+  }
+  roboportmk3.recharge_minimum = "480MJ"
+  roboportmk3.energy_usage = "600kW"
+  roboportmk3.charging_energy = "2MW"
+  roboportmk3.robot_slots_count = 24
+  roboportmk3.heating_energy = "600kW"
+  roboportmk3.frozen_patch =
+  {
+    filename = "__space-age__/graphics/entity/frozen/roboport/roboport-base.png",
+    width = 228,
+    height = 277,
+    shift = util.by_pixel(2, -2.25),
+    scale = 0.5
+  }
+  roboportmk3.material_slots_count = 10
+  roboportmk3.charging_offsets = {
+    {-1.5, 1.5},
+    {-1.0, 1.5},
+    {-0.5, 1.5},
+    {0.0, 1.5},
+    {0.5, 1.5},
+    {1.0, 1.5},
+    {1.5, 1.5},
+    {-1.5, 1.0},
+    {1.5, 1.0},
+    {-1.5, 0.5},
+    {1.5, 0.5},
+    {-1.5, -0.5},
+    {1.5, 0.0},
+    {-1.5, -1.0},
+    {1.5, -0.5},
+    {-1.5, -1.5},
+    {1.5, -1.5},
+    {-1.5, -1.5},
+    {-1.0, -1.5},
+    {-0.5, -1.5},
+    {0.0, -1.5},
+    {0.5, -1.5},
+    {1.0, -1.5},
+    {1.5, -1.5}
+  }
+  roboportmk3.base = {
+    layers = {
+      {
+        filename = "__Factorio_Roboport_mk2__/graphics/entity/roboport/roboport-mk3-base.png",
+        width = 228,
+        height = 277,
+        shift = util.by_pixel(2, 7.75),
+        scale = 0.5
+      },
+      {
+        filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
+        width = 294,
+        height = 201,
+        draw_as_shadow = true,
+        force_hr_shadow = true,
+        shift = util.by_pixel(28.5, 19.25),
+        scale = 0.5
+      }
     }
   }
-}
 
+else -- If Spaceage is disabled, this part is loaded, WITHOUT freezing and heating
+  roboportmk2 = deepCopy(data.raw.roboport["roboport"])
+  roboportmk2.name = "roboport-mk2"
+  roboportmk2.fast_replaceable_group = "roboport"
+  roboportmk2.icon = "__Factorio_Roboport_mk2__/graphics/icons/roboport-mk2.png"
+  roboportmk2.dying_explosion = "roboport-explosion"
+  roboportmk2.corpse = "roboport-remnant-mk2"
+  roboportmk2.next_upgrade = "roboport-mk3"
+  roboportmk2.logistics_radius = settings.startup["mk2-logistic-radius"].value
+  roboportmk2.construction_radius = settings.startup["mk2-construction-radius"].value
+  roboportmk2.minable = {mining_time = 0.1, result = "roboport-mk2"}
+  roboportmk2.energy_source = {
+    type = "electric",
+    usage_priority = "secondary-input",
+    input_flow_limit = "16MW",
+    buffer_capacity = "600MJ"
+  }
+  roboportmk2.recharge_minimum = "240MJ"
+  roboportmk2.energy_usage = "300kW"
+  roboportmk2.charging_energy = "1MW"
+  roboportmk2.robot_slots_count = 16
+  roboportmk2.material_slots_count = 10
+  roboportmk2.charging_offsets = {
+    {-1.5, 1.5},
+    {-0.5, 1.5},
+    {0, 1.5},
+    {0.5, 1.5},
+    {1.5, 1.5},
+    {-1.5, 0.5},
+    {1.5, 0.5},
+    {-1.5, 0},
+    {1.5, 0},
+    {-1.5, -1.0},
+    {1.5, -0.5},
+    {-1.5, -1.5},
+    {-0.5, -1.5},
+    {0, -1.5},
+    {0.5, -1.5},
+    {1.5, -1.5}
+  }
+  roboportmk2.base = {
+    layers = {
+      {
+        filename = "__Factorio_Roboport_mk2__/graphics/entity/roboport/roboport-mk2-base.png",
+        width = 228,
+        height = 277,
+        shift = util.by_pixel(2, 7.75),
+        scale = 0.5
+      },
+      {
+        filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
+        width = 294,
+        height = 201,
+        draw_as_shadow = true,
+        force_hr_shadow = true,
+        shift = util.by_pixel(28.5, 19.25),
+        scale = 0.5
+      }
+    }
+  }
+
+
+  roboportmk3 = deepCopy(data.raw.roboport["roboport"])
+  roboportmk3.name = "roboport-mk3"
+  roboportmk3.fast_replaceable_group = "roboport"
+  roboportmk3.corpse = "roboport-remnant-mk3"
+  roboportmk3.logistics_radius = settings.startup["mk3-logistic-radius"].value
+  roboportmk3.construction_radius = settings.startup["mk3-construction-radius"].value
+  roboportmk3.minable = {mining_time = 1, result = "roboport-mk3"}
+  roboportmk3.energy_source = {
+    type = "electric",
+    usage_priority = "secondary-input",
+    input_flow_limit = "48MW",
+    buffer_capacity = "1200MJ"
+  }
+  roboportmk3.recharge_minimum = "480MJ"
+  roboportmk3.energy_usage = "600kW"
+  roboportmk3.charging_energy = "2MW"
+  roboportmk3.robot_slots_count = 24
+  roboportmk3.material_slots_count = 10
+  roboportmk3.charging_offsets = {
+    {-1.5, 1.5},
+    {-1.0, 1.5},
+    {-0.5, 1.5},
+    {0.0, 1.5},
+    {0.5, 1.5},
+    {1.0, 1.5},
+    {1.5, 1.5},
+    {-1.5, 1.0},
+    {1.5, 1.0},
+    {-1.5, 0.5},
+    {1.5, 0.5},
+    {-1.5, -0.5},
+    {1.5, 0.0},
+    {-1.5, -1.0},
+    {1.5, -0.5},
+    {-1.5, -1.5},
+    {1.5, -1.5},
+    {-1.5, -1.5},
+    {-1.0, -1.5},
+    {-0.5, -1.5},
+    {0.0, -1.5},
+    {0.5, -1.5},
+    {1.0, -1.5},
+    {1.5, -1.5}
+  }
+  roboportmk3.base = {
+    layers = {
+      {
+        filename = "__Factorio_Roboport_mk2__/graphics/entity/roboport/roboport-mk3-base.png",
+        width = 228,
+        height = 277,
+        shift = util.by_pixel(2, 7.75),
+        scale = 0.5
+      },
+      {
+        filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
+        width = 294,
+        height = 201,
+        draw_as_shadow = true,
+        force_hr_shadow = true,
+        shift = util.by_pixel(28.5, 19.25),
+        scale = 0.5
+      }
+    }
+  }
+end
 
 data:extend(
   {
